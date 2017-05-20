@@ -1,6 +1,6 @@
 #ifndef ERROR_H
 #define ERROR_H
-#include <string>
+#include <iostream>
 using namespace std;
 
 class Error
@@ -8,7 +8,6 @@ class Error
 private:
 	Error();
 public:
-	static void dump(char* msg);
 	static void dump(string msg);
 };
 

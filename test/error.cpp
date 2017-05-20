@@ -1,8 +1,6 @@
-#include <iostream>
-#include <string>
 #include "error.h"
-using namespace std;
 
 int main(){
-	Error::dump("hey");
+	Error::dump("This is error test!!");
+  return 0;
 }
