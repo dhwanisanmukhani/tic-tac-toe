@@ -8,7 +8,7 @@ private:
 	char b[3][3];
 public:
 	Board();
-	void move(int row, int col, int val);
+	int move(int row, int col, int val);
 	void print();
 	int check();
 };
