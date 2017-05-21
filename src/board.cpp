@@ -1,5 +1,7 @@
 #include "board.h"
 #include "error.h"
+#include <iostream>
+using namespace std;
 
 Board::Board(){
 	for(int i=0;i<3;i++){
@@ -11,25 +13,21 @@ Board::Board(){
 
 void Board::move(int row, int col, int val){
 	if(row < 0 || row > 2){
-		dump("Wrong row choice!! Dont you know how to play, You dumb fellow!!!");
+		Error::dump("Wrong row choice!! Dont you know how to play, You dumb fellow!!!");
 		return;
 	}
 	if(col < 0 || col > 2){
-		dump("Wrong row choice!! Dont you know how to play, You dumb fellow!!!")
+		Error::dump("Wrong column choice!! Dont you know how to play, You dumb fellow!!!");
+		return;
+	}
+	if(b[row][col]){
+		Error::dump("Sorry... Already occupied");
 		return;
 	}
 	if(val == 0)
-		b[row][col] == 'O';
+		b[row][col] = 'O';
 	else
-		b[row][col] == 'X';
-	if(check() < 2){
-		print();
-		cout<<"Player "<<check()+1<<" wins!! Congo!!"<<endl;
-	}
-	else if(check() == 2){
-		print();
-		cout<<"Draw!!"<<endl;
-	}
+		b[row][col] = 'X';
 }
 
 int Board::check(){
@@ -72,16 +70,16 @@ void Board::print(){
 	for(int i=0;i<3;i++){
 		for(int j=0;j<3;j++){
 			if(b[i][j])
-				cerr<<b[i][j];
+				cout<<b[i][j];
 			else
-				cerr<<" ";
+				cout<<" ";
 			if(j != 2)
-				cerr<" | ";
+				cout<<" | ";
 		}
-		cerr<<endl;
+		cout<<endl;
 		for (int i = 0; i < 9; ++i){
-			cerr<<"_";
+			cout<<"_";
 		}
-		cerr<<endl;
+		cout<<"\n\n";
 	}
 }

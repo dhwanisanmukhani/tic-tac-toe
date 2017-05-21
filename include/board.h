@@ -12,3 +12,5 @@ public:
 	void print();
 	int check();
 };
+
+#endif
