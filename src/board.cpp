@@ -6,28 +6,32 @@ using namespace std;
 Board::Board(){
 	for(int i=0;i<3;i++){
 		for(int j=0;j<3;j++){
-			b[i][j] = 0;
+			b[i][j] = '\0';
 		}
 	}
 }
 
-void Board::move(int row, int col, int val){
+int Board::move(int row, int col, int val){
 	if(row < 0 || row > 2){
 		Error::dump("Wrong row choice!! Dont you know how to play, You dumb fellow!!!");
-		return;
+		return 0;
 	}
 	if(col < 0 || col > 2){
 		Error::dump("Wrong column choice!! Dont you know how to play, You dumb fellow!!!");
-		return;
+		return 0;
 	}
 	if(b[row][col]){
 		Error::dump("Sorry... Already occupied");
-		return;
+		return 0;
 	}
-	if(val == 0)
+	if(val == 0){
 		b[row][col] = 'O';
-	else
+		return 1;
+	}
+	else{
 		b[row][col] = 'X';
+		return 1;
+	}
 }
 
 int Board::check(){
@@ -59,11 +63,11 @@ int Board::check(){
 	}
 	for(int i=0;i<3;i++){
 		for(int j=0;j<3;j++){
-			if(b[i][j] == 0)
-				return 2;
+			if(b[i][j] == '\0')
+				return 3;
 		}
 	}
-	return 3;
+	return 2;
 }
 
 void Board::print(){
