@@ -8,7 +8,7 @@ class Player
 private:
 	string name;
 public:
-	Player();
+	Player(string _name=string("aaa"));
 	void wins();
 };
 

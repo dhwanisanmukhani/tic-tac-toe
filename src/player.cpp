@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-Player::Player(){
-	cin >> name;
+Player::Player(string _name){
+	name = _name;
 }
 
 void Player::wins(){

@@ -1,6 +1,6 @@
 #include "player.h"
 
 int main(){
-	Player p;
+	Player p("abc");
 	p.wins();
 }

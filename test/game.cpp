@@ -4,7 +4,7 @@
 #include "player.h"
 using namespace std;
 
-int main(){
-	Game game;
+int main(int argc, char const *argv[]){
+	Game game(argv[1], argv[2]);
 	game.play();
 }

@@ -20,12 +20,12 @@ int Board::move(int row, int col, int val){
 		Error::dump("Wrong column choice!! Dont you know how to play, You dumb fellow!!!");
 		return 0;
 	}
-	if(b[row][col]){
+	if(b[row][col] != '\0'){
 		Error::dump("Sorry... Already occupied");
 		return 0;
 	}
 	if(val == 0){
-		b[row][col] = 'O';
+		b[row][col] = 'O';	
 		return 1;
 	}
 	else{
