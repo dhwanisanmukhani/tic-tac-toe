@@ -6,25 +6,15 @@ using namespace std;
 int main()
 {
 	Board board;
-	cout << board.move(0, 0, 0) << endl;
-	board.check();
-	board.print();
-	cout << board.move(0, 0, 1) << endl;
-	board.check();
-	board.print();
-	cout << board.move(2, 2, 0) << endl;
-	board.check();
-	board.print();
-	cout << board.move(2, 0, 1) << endl;
-	board.check();
-	board.print();
-	cout << board.move(0, 2, 0) << endl;
-	board.check();
-	board.print();
-	cout << board.move(0, 1, 1) << endl;
-	board.check();
-	board.print();
-	cout << board.move(1, 2, 0) << endl;
-	board.check();
+	board.apply_move(0, 2, 0);
+	board.apply_move(0, 0, 1);
+	board.apply_move(0, 1, 1);
+	board.apply_move(1, 0, 0);
+	board.apply_move(1, 1, 0);
+	board.apply_move(1, 2, 1);
+	board.apply_move(2, 0, 0);
+	board.apply_move(2, 1, 1);
+	board.apply_move(2, 2, 0);
+	cout << board.check()<<endl;
 	board.print();
 }

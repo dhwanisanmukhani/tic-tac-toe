@@ -5,6 +5,6 @@
 using namespace std;
 
 int main(int argc, char const *argv[]){
-	Game game(argv[1], argv[2]);
+	Game game(argv[1]);
 	game.play();
 }

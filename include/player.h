@@ -5,11 +5,9 @@ using namespace std;
 
 class Player
 {
-private:
-	string name;
 public:
-	Player(string _name=string("aaa"));
-	void wins();
+	virtual void wins() = 0;
+	virtual pair<int, int> get_move() = 0;
 };
 
 #endif

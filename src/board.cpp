@@ -11,7 +11,7 @@ Board::Board(){
 	}
 }
 
-int Board::move(int row, int col, int val){
+int Board::apply_move(int row, int col, int val){
 	if(row < 0 || row > 2){
 		Error::dump("Wrong row choice!! Dont you know how to play, You dumb fellow!!!");
 		return 0;
@@ -32,6 +32,18 @@ int Board::move(int row, int col, int val){
 		b[row][col] = 'X';
 		return 1;
 	}
+}
+
+void Board::undo_move(int row, int col){
+	if(row < 0 || row > 2){
+		Error::dump("Wrong row choice!! Dont you know how to play, You dumb fellow!!!");
+		return;
+	}
+	if(col < 0 || col > 2){
+		Error::dump("Wrong column choice!! Dont you know how to play, You dumb fellow!!!");
+		return;
+	}
+	b[row][col] = '\0';
 }
 
 int Board::check(){

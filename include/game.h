@@ -7,8 +7,8 @@
 class Game{
 public:
 	Board board;
-	Player p[2];
-	Game(string _name1, string _name2);
+	Player* p[2];
+	Game(string _name1);
 	void play();
 };
 

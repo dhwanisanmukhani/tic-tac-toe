@@ -4,11 +4,11 @@
 
 class Board
 {
-private:
-	char b[3][3];
 public:
+	char b[3][3];
 	Board();
-	int move(int row, int col, int val);
+	int apply_move(int row, int col, int val);
+	void undo_move(int row, int col);
 	void print();
 	int check();
 };
